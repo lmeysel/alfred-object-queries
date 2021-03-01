@@ -1,7 +1,7 @@
 # Alfred Object Queries
 
-[![Travis](https://img.shields.io/github/workflow/status/lmeysel/alfred-object-queries/build)](https://travis-ci.org/alexjoverm/typescript-library-starter)
-[![Coveralls](https://img.shields.io/coveralls/lmeysel/alfred-object-queries.svg)](https://coveralls.io/github/lmeysel/alfred-object-queries)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/lmeysel/alfred-object-queries/Node.js%20CI)
+[![Coveralls](https://img.shields.io/coveralls/github/lmeysel/alfred-object-queries)](https://coveralls.io/github/lmeysel/alfred-object-queries)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg)](https://paypal.me/lmeysel)
 ## Why "Alfred"?
 Why not?
