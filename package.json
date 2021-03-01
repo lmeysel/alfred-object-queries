@@ -12,7 +12,7 @@
 	"author": "lmeysel <ludwig@meysel.de>",
 	"repository": {
 		"type": "git",
-		"url": ""
+		"url": "git+https://github.com/lmeysel/alfred-object-queries.git"
 	},
 	"license": "MIT",
 	"engines": {
