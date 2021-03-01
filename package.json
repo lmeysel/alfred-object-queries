@@ -1,0 +1,125 @@
+{
+	"name": "alfred-object-queries",
+	"version": "0.0.0-development",
+	"description": "",
+	"keywords": [],
+	"main": "dist/alfred-object-queries.umd.js",
+	"module": "dist/alfred-object-queries.es5.js",
+	"typings": "dist/types/alfred-object-queries.d.ts",
+	"files": [
+		"dist"
+	],
+	"author": "lmeysel <ludwig@meysel.de>",
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"license": "MIT",
+	"engines": {
+		"node": ">=14.0.0"
+	},
+	"scripts": {
+		"lint": "eslint --fix src/**/*.ts test/**/*.ts",
+		"prebuild": "rimraf dist",
+		"build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --theme minimal src",
+		"start": "rollup -c rollup.config.ts -w",
+		"test": "jest --coverage --runInBand",
+		"test:watch": "jest --coverage --watch",
+		"test:prod": "npm run lint && npm run test -- --no-cache",
+		"deploy-docs": "ts-node tools/gh-pages-publish",
+		"commit": "git-cz",
+		"semantic-release": "semantic-release",
+		"semantic-release-prepare": "ts-node tools/semantic-release-prepare",
+		"precommit": "lint-staged"
+	},
+	"lint-staged": {
+		"{src,test}/**/*.ts": [
+			"prettier --write",
+			"git add"
+		]
+	},
+	"config": {
+		"commitizen": {
+			"path": "node_modules/cz-conventional-changelog"
+		}
+	},
+	"jest": {
+		"transform": {
+			".tsx?": "ts-jest"
+		},
+		"testEnvironment": "node",
+		"testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js"
+		],
+		"coveragePathIgnorePatterns": [
+			"/node_modules/",
+			"/test/"
+		],
+		"coverageThreshold": {
+			"global": {
+				"branches": 90,
+				"functions": 95,
+				"lines": 95,
+				"statements": 95
+			}
+		},
+		"setupFiles": [
+			"./test/setup.ts"
+		],
+		"setupFilesAfterEnv": [
+			"jest-extended"
+		],
+		"collectCoverageFrom": [
+			"src/*.{js,ts}"
+		]
+	},
+	"prettier": {
+		"semi": false,
+		"singleQuote": true
+	},
+	"commitlint": {
+		"extends": [
+			"@commitlint/config-conventional"
+		]
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^12.0.0",
+		"@commitlint/config-conventional": "^12.0.0",
+		"@rollup/plugin-commonjs": "^17.1.0",
+		"@rollup/plugin-json": "^4.1.0",
+		"@rollup/plugin-node-resolve": "^11.1.1",
+		"@rollup/plugin-replace": "^2.3.4",
+		"@types/jest": "^26.0.20",
+		"@types/node": "^14.14.27",
+		"@types/shelljs": "^0.8.8",
+		"@typescript-eslint/eslint-plugin": "^4.15.0",
+		"@typescript-eslint/parser": "^4.15.0",
+		"colors": "^1.4.0",
+		"commitizen": "^4.2.3",
+		"cross-env": "^7.0.3",
+		"cz-conventional-changelog": "^3.3.0",
+		"enquirer": "^2.3.6",
+		"eslint": "^7.19.0",
+		"husky": "^5.0.9",
+		"jest": "26.6.3",
+		"jest-config": "26.6.3",
+		"jest-extended": "^0.11.5",
+		"lint-staged": "^10.5.4",
+		"lodash.camelcase": "^4.3.0",
+		"replace-in-file": "^6.2.0",
+		"rimraf": "^3.0.2",
+		"rollup": "^2.38.5",
+		"rollup-plugin-sourcemaps": "^0.6.3",
+		"rollup-plugin-typescript2": "^0.30.0",
+		"semantic-release": "^17.3.8",
+		"shelljs": "^0.8.4",
+		"ts-jest": "^26.5.1",
+		"ts-node": "^9.1.1",
+		"tslib": "^2.1.0",
+		"typedoc": "^0.20.24",
+		"typescript": "^4.1.5"
+	}
+}
