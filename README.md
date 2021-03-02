@@ -10,16 +10,7 @@ Why not?
 
 When creating dashboards I often face the situation, that displayed data needs to be filtered. Many interfaces solve this problem by providing a property-comparator-value pattern, like `age < 60` or `type = "employee"`. Then you see something like this:
 
-<select>
-  <option>age</option>
-  <option selected>type</option>
-</select>
-<select>
-  <option>=</option>
-  <option>&gt;</option>
-  <option>&lt;</option>
-</select>
-<input value="employee">
+![Query form example](./doc/readme_select_example.png)
 
 Maybe the users are allowed to add multiple of these rows to filter more properties. And that is where the hassle begins: How are multiple conditions are conjugated? Should it be `Condition1 AND Condition2` or better `Condition1 OR Condition2`?  Okay, let the user decide: Add another select to each row, to let the user choose between `and` and `or`. Cool. The interface looks terrible and becomes clumsy and probably unresponsive. When the data becomes more complex, the demand for filtering also may become more complex: Think of a car-dealer, who looks for VWs which ran less then 50k miles or are blue? This query would look like `brand: VW and (color: blue or miles < 50k)`. Simple query, but the UI now would become pretty complex (consider the unneglectible paretheses). Futhermore to set up this filter many clicks are necessary. Why can I not easily _type_ what I want?
 
