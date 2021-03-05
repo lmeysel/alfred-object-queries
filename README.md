@@ -6,7 +6,7 @@
 ## Why "Alfred"?
 Why not?
 
-## Why another framework?
+## Why another library?
 
 When creating dashboards I often face the situation, that displayed data needs to be filtered. Many interfaces solve this problem by providing a property-comparator-value pattern, like `age < 60` or `type = "employee"`. Then you see something like this:
 
@@ -60,7 +60,7 @@ Properties can be addressed as simple word or if special chars are needed also w
 Values can be specified as word
 * Word: `brand: VW`
 * String: `brand: "VW"` or `brand: 'VW'`
-* Regular expression, as long as no [Casting](#Casting) is specified for the property: `brand: /^VW$/`. RegEx flags (`/VW/mgi`) are not supported!
+* Regular expression, as long as no [Casting](#Casting) is specified for the property: `brand: /^VW$/`. RegEx flags (`/VW/mgi`) __are not supported__!
 
 Queries can be nested: `brand: VW and (color: blue or miles < 50000)`. `and`-conjugations take precedence over `or` conjugations. This means `miles < 50000 or brand: VW and color: blue` is actually evaluated as `miles < 50000 or (brand: VW and color: blue)`.
 
