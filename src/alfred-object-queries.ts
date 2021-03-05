@@ -1,6 +1,7 @@
 /* istanbul ignore file */
 
 export * from './QueryParser'
+export * from './QueryManager'
 export * from './Common'
 export * from './ParserError'
 
