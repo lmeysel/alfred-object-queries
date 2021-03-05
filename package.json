@@ -1,6 +1,6 @@
 {
 	"name": "alfred-object-queries",
-	"version": "0.0.0-development",
+	"version": "0.0.1-development",
 	"description": "",
 	"keywords": [],
 	"main": "dist/alfred-object-queries.umd.js",
